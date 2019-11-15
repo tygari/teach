@@ -20,9 +20,8 @@
 				'clicks': 0,								//clicks variable
 				'amount': 0,								//auto clicks value
 				'saver': {
-					'check':()=>(vars.clicks >= saver.cost() && vars.saver.val < 10),
-					'val': 0,														
-					
+					'check':()=>(vars.clicks >= saver.cost() && vars.saver.val < 10),//saver function conditional
+					'val': 0,							//time saver value
 				},
 			}
 
