@@ -26,9 +26,8 @@
 			}
 
 			window.addEventListener("load",function(){start();});
-
-			const start = function(){setTimeout(auto, 10000);}				//starts time loop in 1000 miliseconds
-
+			const start = function(){setTimeout(auto, 10000);}				//starts time loop in 10 seconds
+			
 			const auto = function(){
 				let saver = 10000 - (vars.saver.val * 1000);
 				//vars.clicks = vars.clicks + vars.amount;	
