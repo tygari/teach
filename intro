@@ -27,68 +27,6 @@
 
 			window.addEventListener("load",function(){start();});
 			const start = function(){setTimeout(auto, 10000);}				//starts time loop in 10 seconds
-			
-			const auto = function(){
-				let saver = 10000 - (vars.saver.val * 1000);
-				//vars.clicks = vars.clicks + vars.amount;	
-				vars.clicks += vars.amount;						//time loop adds to clicks
-				document.getElementById('clicks').innerHTML = vars.clicks;
-				setTimeout(auto, saver);						//restarts time loop in 1000 miliseconds
-			}
-
-			const clicker = function(){
-				//vars.clicks = vars.clicks + 1;
-				//vars.clicks += 1;
-				vars.clicks++;								//adds +1 to clicks
-				document.getElementById('clicks').innerHTML = vars.clicks;		//overwrites html clicks value
-			}
-
-			const autoBuy = function(){
-				if(vars.clicks >= autoBuy.cost()){					//checks that the player can afford the next autoclick
-					vars.clicks -= autoBuy.cost();					//removes the clicks spent
-					vars.amount++;							//increases number of auto click amount +1
-					document.getElementById('amount').innerHTML = vars.amount;	//updates the number of autoclick amount for the user
-					document.getElementById('clicks').innerHTML = vars.clicks;	//updates the number of clicks for the user
-				}
-				document.getElementById('amountCost').innerHTML = autoBuy.cost();	//updates the autoclick cost for the user
-			}
-			autoBuy.cost =()=>{return Math.floor(10*Math.pow(1.1,vars.amount))};		//works out the cost of next autoclick
-
-			const saver = function(){
-				if(vars.saver.check()){
-					vars.clicks -= saver.cost();
-					vars.saver.val++;
-					document.getElementById('savers').innerHTML = vars.saver.val;
-					document.getElementById('clicks').innerHTML = vars.clicks;
-				}<html>
-	<head>
-		<title>Idle Teach</title>
-	</head>
-	<body style="text-align:center">
-	<p>
-	<button type="button" onclick="clicker()"><b>Click</b></button>
-	<br>Amount: <span id="clicks">0</span>
-	</p>
-	<p><button type="button" onclick="autoBuy()"><b>Auto Click</b></button>
-	<br>Auto Click: <span id="amount">0</span>
-	<br>Cost: <span id="amountCost">10</span>
-	</p>
-	<p><button type="button" onclick="saver()"><b>Time Saver</b></button>
-	<br>Time Saver: <span id="savers">0</span>
-	<br>Cost: <span id="saverCost">10</span>
-	</p>
-		<script>
-			var vars = {
-				'clicks': 0,								//clicks variable
-				'amount': 0,								//auto clicks value
-				'saver': {
-					'check':()=>(vars.clicks >= saver.cost() && vars.saver.val < 10),//saver function conditional
-					'val': 0,							//time saver value
-				},
-			}
-
-			window.addEventListener("load",function(){start();});
-			const start = function(){setTimeout(auto, 10000);}				//starts time loop in 10 seconds
 
 			const auto = function(){
 				let saver = 10000 - (vars.saver.val * 1000);
@@ -105,7 +43,7 @@
 				document.getElementById('clicks').innerHTML = vars.clicks;		//overwrites html clicks value
 			}
 			
-			const ID =x=>(document.getElementById(x));					//code shortener		
+			const ID =x=>(document.getElementById(x));					//code shortener
 
 			const autoBuy = function(){
 				if(vars.clicks >= autoBuy.cost()){					//checks that the player can afford the next autoclick
@@ -126,12 +64,6 @@
 					ID('clicks').innerHTML = vars.clicks;
 				}
 				ID('saverCost').innerHTML = saver.cost();
-			}
-			saver.cost =()=>(Math.floor(10*Math.pow(1.1,vars.saver.val)));
-		</script>
-	</body>
-</html>
-				document.getElementById('saverCost').innerHTML = saver.cost();
 			}
 			saver.cost =()=>(Math.floor(10*Math.pow(1.1,vars.saver.val)));
 		</script>
